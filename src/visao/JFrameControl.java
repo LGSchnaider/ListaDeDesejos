@@ -1,4 +1,4 @@
-package lista;
+package visao;
 
 import java.awt.EventQueue;
 
