@@ -12,6 +12,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Cadastrar extends JFrame {
 
@@ -22,18 +24,6 @@ public class Cadastrar extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Cadastrar frame = new Cadastrar();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -103,8 +93,13 @@ public class Cadastrar extends JFrame {
 		JButton btnNewButton_1 = new JButton("Cadastrar");
 		Sul.add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("Voltar");
-		Sul.add(btnNewButton);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		Sul.add(btnVoltar);
 	}
 
 }

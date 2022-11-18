@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Inicio extends JFrame {
 
@@ -21,18 +23,7 @@ public class Inicio extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Inicio frame = new Inicio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
@@ -62,8 +53,27 @@ public class Inicio extends JFrame {
 		center.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton = new JButton("Lista de Desejos");
-		panel_1.add(btnNewButton);
+		JButton btnListaDesejo = new JButton("Lista de Desejos");
+		btnListaDesejo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE LISTA DE DESEJOS
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							ListaDeDesejos frame = new ListaDeDesejos();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TERMINA O CHAMADO
+				
+			}
+		});
+		panel_1.add(btnListaDesejo);
 		
 		JPanel panel_10 = new JPanel();
 		panel_1.add(panel_10, BorderLayout.NORTH);
@@ -81,8 +91,16 @@ public class Inicio extends JFrame {
 		center.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton_3 = new JButton("Histórico");
-		panel_2.add(btnNewButton_3);
+		JButton btnHistorico = new JButton("Histórico");
+		btnHistorico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				
+			}
+		});
+		panel_2.add(btnHistorico);
 		
 		JPanel panel_6 = new JPanel();
 		panel_2.add(panel_6, BorderLayout.NORTH);
@@ -100,8 +118,27 @@ public class Inicio extends JFrame {
 		center.add(panel_3);
 		panel_3.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton_1 = new JButton("Cadastrar Produto");
-		panel_3.add(btnNewButton_1);
+		JButton btnProduto = new JButton("Cadastrar Produto");
+		btnProduto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE CADASTRAR PRODUTO
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Produto frame = new Produto();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TERMINA O CHAMADO
+				
+			}
+		});
+		panel_3.add(btnProduto);
 		
 		JPanel panel_14 = new JPanel();
 		panel_3.add(panel_14, BorderLayout.NORTH);
@@ -138,8 +175,26 @@ public class Inicio extends JFrame {
 		center.add(panel_5);
 		panel_5.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton_2 = new JButton("Lista de Vendedores");
-		panel_5.add(btnNewButton_2);
+		JButton btnListaVendedores = new JButton("Lista de Vendedores");
+		btnListaVendedores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE LISTA DE VENDEDORES
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							ListaDeVendedores frame = new ListaDeVendedores();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TERMINA O CHAMADO
+			}
+		});
+		panel_5.add(btnListaVendedores);
 		
 		JPanel panel_18 = new JPanel();
 		panel_5.add(panel_18, BorderLayout.NORTH);

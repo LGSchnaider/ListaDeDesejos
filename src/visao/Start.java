@@ -11,6 +11,8 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Start extends JFrame {
 
@@ -20,6 +22,8 @@ public class Start extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+	
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -61,6 +65,24 @@ public class Start extends JFrame {
 		panel_3.setLayout(new BorderLayout(0, 0));
 		
 		JButton btnNewButton = new JButton("Cadastrar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				//CHAMA A CLASSE CADASTRAR
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Cadastrar frame = new Cadastrar();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				
+				//TERMINA O CHAMADO
+			}
+		});
 		panel_3.add(btnNewButton);
 		
 		JPanel panel_5 = new JPanel();
@@ -80,6 +102,24 @@ public class Start extends JFrame {
 		panel_4.setLayout(new BorderLayout(0, 0));
 		
 		JButton btnNewButton_1 = new JButton("Login");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE LOGIN
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Login frame = new Login();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				//TERMINA O CHAMADO
+				
+			}
+		});
 		panel_4.add(btnNewButton_1);
 		
 		JPanel panel_9 = new JPanel();
@@ -99,6 +139,11 @@ public class Start extends JFrame {
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
 		JButton btnNewButton_2 = new JButton("Sair");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
 		panel_2.add(btnNewButton_2);
 		
 		JPanel panel_13 = new JPanel();

@@ -25,18 +25,6 @@ public class ListaDeVendedores extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ListaDeVendedores frame = new ListaDeVendedores();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -79,11 +67,26 @@ public class ListaDeVendedores extends JFrame {
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
 		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE TELA DE INICIO
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Inicio frame = new Inicio();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TERMINA O CHAMADO
+				
 			}
 		});
-		panel_2.add(btnNewButton_1);
+		panel_2.add(btnVoltar);
 	}
 }

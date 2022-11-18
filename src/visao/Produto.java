@@ -25,18 +25,6 @@ public class Produto extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Produto frame = new Produto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -70,12 +58,27 @@ public class Produto extends JFrame {
 		JButton btnNewButton_2 = new JButton("Remover");
 		panel_1.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Voltar");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A CLASSE TELA DE INICIO
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Inicio frame = new Inicio();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TERMINA O CHAMADO
+				
 			}
 		});
-		panel_1.add(btnNewButton_3);
+		panel_1.add(btnVoltar);
 		
 		JPanel centro = new JPanel();
 		contentPane.add(centro, BorderLayout.CENTER);

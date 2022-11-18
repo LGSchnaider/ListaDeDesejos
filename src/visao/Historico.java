@@ -8,16 +8,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTable;
-import java.awt.Color;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
-public class ListaDeDesejos extends JFrame {
+public class Historico extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -25,14 +24,25 @@ public class ListaDeDesejos extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Historico frame = new Historico();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
 	 */
-	public ListaDeDesejos() {
+	public Historico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 300, 300);
+		setBounds(100, 100, 250, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -40,10 +50,9 @@ public class ListaDeDesejos extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 0, 255));
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel = new JLabel("Lista de desejos");
+		JLabel lblNewLabel = new JLabel("Histórico");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
 		panel.add(lblNewLabel);
 		
@@ -52,49 +61,26 @@ public class ListaDeDesejos extends JFrame {
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane = new JScrollPane();
-		panel_1.add(scrollPane);
+		panel_1.add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
-		scrollPane.add(table);
-		
 		scrollPane.setViewportView(table);
 		
 		DefaultTableModel model = new DefaultTableModel();
-		Object[] Column = {"Nome", "Valor", "Validade"};
-		Object[] row = new Object[3];
+		Object[] Column = {"Nome", "Validade"};
+		Object[] row = new Object[2];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
 		
-		JButton btnNewButton = new JButton("Comprado");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel_2.add(btnNewButton);
-		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//CHAMA A CLASSE TELA INICIAL
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inicio frame = new Inicio();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				setVisible(false);
-				//TERMINA O CHAMADO
-				
 			}
 		});
 		panel_2.add(btnVoltar);
 	}
+
 }

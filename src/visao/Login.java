@@ -12,6 +12,8 @@ import java.awt.GridLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -22,18 +24,7 @@ public class Login extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the frame.
@@ -100,10 +91,34 @@ public class Login extends JFrame {
 		JPanel south = new JPanel();
 		contentPane.add(south, BorderLayout.SOUTH);
 		
-		JButton btnNewButton = new JButton("Login");
-		south.add(btnNewButton);
+		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//CHAMA A TELA DE INICIO
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Inicio frame = new Inicio();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
+				//TEMINA O CHAMADO
+				
+			}
+		});
+		south.add(btnLogin);
 		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		south.add(btnNewButton_1);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		south.add(btnVoltar);
 	}
 }
