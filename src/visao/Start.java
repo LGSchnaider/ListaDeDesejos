@@ -99,17 +99,9 @@ public class Start extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE LOGIN
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Login frame = new Login();
-							frame.setLocationRelativeTo(null);
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				Login frame = new Login();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
 				// TERMINA O CHAMADO
 
 			}
@@ -132,13 +124,13 @@ public class Start extends JFrame {
 		panel_1.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
 
-		JButton btnNewButton_2 = new JButton("Sair");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnSair = new JButton("Sair");
+		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
 			}
 		});
-		panel_2.add(btnNewButton_2);
+		panel_2.add(btnSair);
 
 		JPanel panel_13 = new JPanel();
 		panel_2.add(panel_13, BorderLayout.NORTH);

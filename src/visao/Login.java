@@ -89,8 +89,11 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
+				//CHAMA A CLASSE INICIO
 				Inicio frame = new Inicio();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
+				//TERMINA O CHAMADO
 			}
 		});
 		south.add(btnLogin);
@@ -98,7 +101,12 @@ public class Login extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
+				//CHAMA A CLASSE START
+				Start frame = new Start();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				//TERMINA O CHAMADO
 			}
 		});
 		south.add(btnVoltar);

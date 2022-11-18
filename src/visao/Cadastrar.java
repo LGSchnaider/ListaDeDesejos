@@ -95,7 +95,12 @@ public class Cadastrar extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
+				dispose();
+				//CHAMA A CLASSE START
+				Start frame = new Start();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				//TERMINA O CHAMADO
 			}
 		});
 		Sul.add(btnVoltar);
