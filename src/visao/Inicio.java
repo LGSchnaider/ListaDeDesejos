@@ -95,7 +95,17 @@ public class Inicio extends JFrame {
 		btnHistorico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Historico frame = new Historico();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				setVisible(false);
 				
 				
 			}

@@ -1,30 +1,24 @@
 package visao;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.GridLayout;
-import java.awt.Font;
-import javax.swing.JTextField;
 import java.awt.Color;
-import java.awt.event.ActionListener;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-
-	/**
-	 * Launch the application.
-	 */
-
 
 	/**
 	 * Create the frame.
@@ -37,82 +31,70 @@ public class Login extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel north = new JPanel();
 		north.setBackground(new Color(128, 0, 255));
 		contentPane.add(north, BorderLayout.NORTH);
-		
+
 		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setFont(new Font("Sitka Subheading", Font.BOLD, 22));
 		north.add(lblNewLabel);
-		
+
 		JPanel center = new JPanel();
 		contentPane.add(center, BorderLayout.CENTER);
 		center.setLayout(new GridLayout(4, 3, 0, 0));
-		
+
 		JPanel panel = new JPanel();
 		center.add(panel);
-		
+
 		JPanel panel_1 = new JPanel();
 		center.add(panel_1);
-		
+
 		JPanel panel_2 = new JPanel();
 		center.add(panel_2);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Login:");
 		panel_2.add(lblNewLabel_1);
-		
+
 		JPanel panel_4 = new JPanel();
 		center.add(panel_4);
-		
+
 		textField = new JTextField();
 		panel_4.add(textField);
 		textField.setColumns(10);
-		
+
 		JPanel panel_5 = new JPanel();
 		center.add(panel_5);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Senha:");
 		panel_5.add(lblNewLabel_2);
-		
+
 		JPanel panel_6 = new JPanel();
 		center.add(panel_6);
-		
+
 		textField_1 = new JTextField();
 		panel_6.add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JPanel panel_8 = new JPanel();
 		center.add(panel_8);
-		
+
 		JPanel panel_9 = new JPanel();
 		center.add(panel_9);
-		
+
 		JPanel south = new JPanel();
 		contentPane.add(south, BorderLayout.SOUTH);
-		
+
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//CHAMA A TELA DE INICIO
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inicio frame = new Inicio();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				setVisible(false);
-				//TEMINA O CHAMADO
-				
+				dispose();
+				Inicio frame = new Inicio();
+				frame.setVisible(true);
 			}
 		});
 		south.add(btnLogin);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
