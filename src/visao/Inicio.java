@@ -86,7 +86,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE HISTORICO
-				Historico frame = new Historico();
+				TelaHistorico frame = new TelaHistorico();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO

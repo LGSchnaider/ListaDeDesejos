@@ -17,20 +17,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.Color;
 
-public class Historico extends JFrame {
+public class TelaHistorico extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
-
-
-	/**
-	 * Create the frame.
-	 */
-	public Historico() {
+	public TelaHistorico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 300);
 		contentPane = new JPanel();
