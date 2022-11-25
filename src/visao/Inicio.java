@@ -116,7 +116,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE CADASTRAR PRODUTO
-				Produto frame = new Produto();
+				TelaProduto frame = new TelaProduto();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO
