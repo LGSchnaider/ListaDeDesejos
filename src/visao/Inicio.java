@@ -145,7 +145,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				//CHAMA A CLASSE 
-				ListaDeVendedores frame = new ListaDeVendedores();
+				CadastrarLoja frame = new CadastrarLoja();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				//TERMINA O CHAMADO

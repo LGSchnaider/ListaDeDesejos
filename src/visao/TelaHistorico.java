@@ -30,50 +30,42 @@ public class TelaHistorico extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(128, 128, 255));
 		contentPane.add(panel, BorderLayout.NORTH);
-		
+
 		JLabel lblNewLabel = new JLabel("Histórico");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
 		panel.add(lblNewLabel);
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new BorderLayout(0, 0));
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		panel_1.add(scrollPane, BorderLayout.CENTER);
-		
+
 		table = new JTable();
 		scrollPane.setViewportView(table);
-		
+
 		DefaultTableModel model = new DefaultTableModel();
-		Object[] Column = {"Nome", "Validade"};
+		Object[] Column = { "Nome", "Validade" };
 		Object[] row = new Object[2];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
-		
+
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inicio frame = new Inicio();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				setVisible(false);
-				
+				dispose();
+				Inicio frame = new Inicio();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+
 			}
 		});
 		panel_2.add(btnVoltar);

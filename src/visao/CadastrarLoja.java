@@ -24,18 +24,6 @@ public class CadastrarLoja extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CadastrarLoja frame = new CadastrarLoja();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -71,6 +59,12 @@ public class CadastrarLoja extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				//CHAMA A CLASSE INICIO
+				Inicio frame = new Inicio();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				//TERMINA O CHAMADO
 			}
 		});
 		panel_1.add(btnVoltar);

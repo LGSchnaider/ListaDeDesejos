@@ -26,7 +26,6 @@ public class ListaDeDesejos extends JFrame {
 	 * Launch the application.
 	 */
 
-
 	/**
 	 * Create the frame.
 	 */
@@ -38,61 +37,54 @@ public class ListaDeDesejos extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(128, 0, 255));
 		contentPane.add(panel, BorderLayout.NORTH);
-		
+
 		JLabel lblNewLabel = new JLabel("Lista de desejos");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
 		panel.add(lblNewLabel);
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new BorderLayout(0, 0));
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		panel_1.add(scrollPane);
-		
+
 		table = new JTable();
 		scrollPane.add(table);
-		
+
 		scrollPane.setViewportView(table);
-		
+
 		DefaultTableModel model = new DefaultTableModel();
-		Object[] Column = {"Nome", "Valor", "Validade"};
+		Object[] Column = { "Nome", "Valor", "Validade" };
 		Object[] row = new Object[3];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
-		
+
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
-		
+
 		JButton btnNewButton = new JButton("Comprado");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		panel_2.add(btnNewButton);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//CHAMA A CLASSE TELA INICIAL
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inicio frame = new Inicio();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				setVisible(false);
-				//TERMINA O CHAMADO
-				
+
+				// CHAMA A CLASSE TELA INICIAL
+				dispose();
+				Inicio frame = new Inicio();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				// TERMINA O CHAMADO
+
 			}
 		});
 		panel_2.add(btnVoltar);

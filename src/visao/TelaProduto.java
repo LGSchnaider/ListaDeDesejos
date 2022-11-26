@@ -60,19 +60,11 @@ public class TelaProduto extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				dispose();
 				// CHAMA A CLASSE TELA DE INICIO
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inicio frame = new Inicio();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-				setVisible(false);
+				Inicio frame = new Inicio();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
 				// TERMINA O CHAMADO
 
 			}
