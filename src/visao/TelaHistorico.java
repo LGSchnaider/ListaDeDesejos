@@ -50,8 +50,8 @@ public class TelaHistorico extends JFrame {
 		scrollPane.setViewportView(table);
 
 		DefaultTableModel model = new DefaultTableModel();
-		Object[] Column = { "Nome", "Validade" };
-		Object[] row = new Object[2];
+		Object[] Column = { "Nome", "Marca", "Estado de Oringem", "Valor", "Data", "Categoria" };
+		Object[] row = new Object[6];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
 

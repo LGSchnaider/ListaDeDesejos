@@ -26,6 +26,8 @@ public class Historico {
 	public int getData(){
 		return Data;
 	}
+	
+	
 	public void setNome(String NomeP) {
 		this.NomeP = NomeP;
 	}

@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.CadLoja;
+
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -18,8 +21,8 @@ import javax.swing.JComboBox;
 public class CadastrarLoja extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtCidade;
+	private JTextField txtLoja;
 
 	/**
 	 * Launch the application.
@@ -48,6 +51,17 @@ public class CadastrarLoja extends JFrame {
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CadLoja novaLoja = new CadLoja();
+				String Loja =  txtCidade.getText();
+				String Cidade = txtLoja.getText();
+				novaLoja.setLoja(Loja);
+				novaLoja.setCidade(Cidade);
+				
+			}
+		});
+		
 		panel_1.add(btnCadastrar);
 		
 		JButton btnDeletar = new JButton("Deletar");
@@ -106,9 +120,9 @@ public class CadastrarLoja extends JFrame {
 		panel_4.add(panel_9);
 		panel_9.setLayout(new BorderLayout(0, 0));
 		
-		textField_2 = new JTextField();
-		panel_9.add(textField_2, BorderLayout.CENTER);
-		textField_2.setColumns(10);
+		txtLoja = new JTextField();
+		panel_9.add(txtLoja, BorderLayout.CENTER);
+		txtLoja.setColumns(10);
 		
 		JPanel panel_11 = new JPanel();
 		panel_9.add(panel_11, BorderLayout.NORTH);
@@ -126,9 +140,9 @@ public class CadastrarLoja extends JFrame {
 		panel_4.add(panel_8);
 		panel_8.setLayout(new BorderLayout(0, 0));
 		
-		textField_1 = new JTextField();
-		panel_8.add(textField_1, BorderLayout.CENTER);
-		textField_1.setColumns(10);
+		txtCidade = new JTextField();
+		panel_8.add(txtCidade, BorderLayout.CENTER);
+		txtCidade.setColumns(10);
 		
 		JPanel panel_13 = new JPanel();
 		panel_8.add(panel_13, BorderLayout.NORTH);
