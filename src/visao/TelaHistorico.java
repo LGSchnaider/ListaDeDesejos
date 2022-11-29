@@ -24,7 +24,7 @@ public class TelaHistorico extends JFrame {
 
 	public TelaHistorico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 250, 300);
+		setBounds(100, 100, 628, 338);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -50,7 +50,7 @@ public class TelaHistorico extends JFrame {
 		scrollPane.setViewportView(table);
 
 		DefaultTableModel model = new DefaultTableModel();
-		Object[] Column = { "Nome", "Marca", "Estado de Oringem", "Valor", "Data", "Categoria" };
+		Object[] Column = { "Nome", "Marca", "Loja", "Valor", "Data", "Categoria" };
 		Object[] row = new Object[6];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
