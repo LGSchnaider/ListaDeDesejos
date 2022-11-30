@@ -81,5 +81,11 @@ public class ListaDeVendedores extends JFrame {
 			}
 		});
 		panel_2.add(btnVoltar);
+		
+		JButton btnDelete = new JButton("Deletar");
+		panel_2.add(btnDelete);
+		
+		JButton btnEdite = new JButton("Editar");
+		panel_2.add(btnEdite);
 	}
 }

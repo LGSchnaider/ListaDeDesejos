@@ -64,12 +64,6 @@ public class CadastrarLoja extends JFrame {
 		
 		panel_1.add(btnCadastrar);
 		
-		JButton btnDeletar = new JButton("Deletar");
-		panel_1.add(btnDeletar);
-		
-		JButton btnEditar = new JButton("Editar");
-		panel_1.add(btnEditar);
-		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
