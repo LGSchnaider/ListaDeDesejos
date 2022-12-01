@@ -168,6 +168,10 @@ public class CadastrarLoja extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		panel_10.add(comboBox, BorderLayout.CENTER);
+		comboBox.addItem("Eletrônicos");
+		comboBox.addItem("Vestuario");
+		comboBox.addItem("Culinaria");
+		comboBox.addItem("Jardinágem");
 	}
 
 }
