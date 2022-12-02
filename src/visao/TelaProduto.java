@@ -22,7 +22,7 @@ public class TelaProduto extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtValor;
-	private JTextField txtValidade;
+	private JTextField txtMarca;
 
 	/**
 	 * Launch the application.
@@ -142,16 +142,16 @@ public class TelaProduto extends JFrame {
 		panel_6.add(panel_13);
 		panel_13.setLayout(new BorderLayout(0, 0));
 
-		JLabel lblNewLabel_3 = new JLabel("Validade:");
+		JLabel lblNewLabel_3 = new JLabel("Marca:");
 		panel_13.add(lblNewLabel_3, BorderLayout.CENTER);
 
 		JPanel panel_7 = new JPanel();
 		centro.add(panel_7);
 		panel_7.setLayout(new BorderLayout(0, 0));
 
-		txtValidade = new JTextField();
-		panel_7.add(txtValidade, BorderLayout.CENTER);
-		txtValidade.setColumns(10);
+		txtMarca = new JTextField();
+		panel_7.add(txtMarca, BorderLayout.CENTER);
+		txtMarca.setColumns(10);
 
 		JPanel panel_18 = new JPanel();
 		panel_7.add(panel_18, BorderLayout.NORTH);
@@ -165,7 +165,7 @@ public class TelaProduto extends JFrame {
 				Produto novoProduto = new Produto();
 				String nome = txtNome.getText();
 				String valor = txtValor.getText();
-				String validade = txtValidade.getText();
+				String validade = txtMarca.getText();
 				novoProduto.setNome(nome);
 			}
 		});
