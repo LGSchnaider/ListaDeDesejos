@@ -65,7 +65,6 @@ public class TelaHistorico extends JFrame {
 				Inicio frame = new Inicio();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
-
 			}
 		});
 		panel_2.add(btnVoltar);

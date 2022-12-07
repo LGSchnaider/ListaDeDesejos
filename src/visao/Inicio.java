@@ -143,12 +143,7 @@ public class Inicio extends JFrame {
 		JButton btnNewButton_4 = new JButton("Cadastrar Vendedor");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				//CHAMA A CLASSE 
-				CadastrarLoja frame = new CadastrarLoja();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				//TERMINA O CHAMADO
+
 			}
 		});
 		panel_4.add(btnNewButton_4);
@@ -172,12 +167,7 @@ public class Inicio extends JFrame {
 		JButton btnListaVendedores = new JButton("Lista de Vendedores");
 		btnListaVendedores.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				// CHAMA A CLASSE LISTA DE VENDEDORES
-				ListaDeVendedores frame = new ListaDeVendedores();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				// TERMINA O CHAMADO
+
 			}
 		});
 		panel_5.add(btnListaVendedores);

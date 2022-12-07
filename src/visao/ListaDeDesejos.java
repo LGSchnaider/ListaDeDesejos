@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import modelo.Produto;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -30,6 +32,7 @@ public class ListaDeDesejos extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaDeDesejos() {
+		Produto produto = new Produto();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 300, 300);
 		contentPane = new JPanel();
@@ -63,6 +66,8 @@ public class ListaDeDesejos extends JFrame {
 		Object[] row = new Object[3];
 		model.setColumnIdentifiers(Column);
 		table.setModel(model);
+		row[0] = produto.getNome();		
+		model.addRow(row);
 
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);

@@ -162,11 +162,9 @@ public class TelaProduto extends JFrame {
 		JButton btnInserir = new JButton("Inserir");
 		btnInserir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Produto novoProduto = new Produto();
-				String nome = txtNome.getText();
-				String valor = txtValor.getText();
-				String validade = txtMarca.getText();
-				novoProduto.setNome(nome);
+				Produto produto = new Produto();
+				produto.setNome(txtNome.getText());
+				txtNome.setText("");
 			}
 		});
 		panel_1.add(btnInserir);
