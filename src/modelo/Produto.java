@@ -1,46 +1,33 @@
 package modelo;
 
-import java.util.ArrayList;
-
 public class Produto {
-	ArrayList<String> nomesProdutos = new ArrayList(); 
+
+	private Long idProduto;
 	private String nome;
-	private String valor;
-	private String data;
+	private Double preco;
+
+	public Long getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
+	}
 
 	public String getNome() {
 		return nome;
-	}
-	
-	public String getValor() {
-		return valor;
-	}
-	
-	public String getData() {
-		return data;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public void setValor(String valor) {
-		this.valor = valor;
+
+	public Double getPreco() {
+		return preco;
 	}
-	
-	public void setData(String data) {
-		this.data = data;
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
-	
-	public void salvaDados(String nome) {
-		
-	}
-	
-	
-	
-	// private String getDateTime() {
-	// DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-	// Date date = new Date();
-	// return dateFormat.format(date);
-	// }
+
 }
