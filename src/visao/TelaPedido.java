@@ -26,6 +26,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Dimension;
+import java.awt.Rectangle;
 
 public class TelaPedido extends JFrame {
 
@@ -57,6 +59,7 @@ public class TelaPedido extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaPedido() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 500);
 		contentPane = new JPanel();
@@ -70,10 +73,14 @@ public class TelaPedido extends JFrame {
 		
 		JPanel panel = new JPanel();
 		superior.add(panel);
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel = new JLabel("Lista de Desejos");
-		lblNewLabel.setFont(new Font("MV Boli", Font.BOLD | Font.ITALIC, 20));
-		panel.add(lblNewLabel);
+		JLabel lblTitulo = new JLabel("Faça Seu Pedido");
+		lblTitulo.setBounds(new Rectangle(0, 0, 9, 0));
+		lblTitulo.setMaximumSize(new Dimension(100, 14));
+		lblTitulo.setMinimumSize(new Dimension(100, 14));
+		lblTitulo.setFont(new Font("MV Boli", Font.BOLD | Font.ITALIC, 20));
+		panel.add(lblTitulo);
 		
 		JPanel inferior = new JPanel();
 		contentPane.add(inferior, BorderLayout.SOUTH);
@@ -91,8 +98,10 @@ public class TelaPedido extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		esquerda.add(panel_2);
+		panel_2.setLayout(null);
 		
 		txtNome = new JTextField();
+		txtNome.setBounds(new Rectangle(5, 5, 86, 20));
 		panel_2.add(txtNome);
 		txtNome.setColumns(10);
 		
