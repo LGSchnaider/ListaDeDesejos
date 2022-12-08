@@ -4,8 +4,10 @@ public class Produto {
 
 	private Long id;
 	private String nome;
-	private Double preco;
+	private Double valor;
 	private String marca;
+	private String categoria;
+	private String estabelecimento;
 
 	public Long getId() {
 		return id;
@@ -23,12 +25,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public Double getPreco() {
-		return preco;
+	public Double getValor() {
+		return valor;
 	}
 
-	public void setPreco(Double preco) {
-		this.preco = preco;
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 
 	public String getMarca() {
@@ -37,5 +39,21 @@ public class Produto {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getEstabelecimento() {
+		return estabelecimento;
+	}
+
+	public void setEstabelecimento(String estabelecimento) {
+		this.estabelecimento = estabelecimento;
 	}
 }
