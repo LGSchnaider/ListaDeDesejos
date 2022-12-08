@@ -5,6 +5,7 @@ public class Produto {
 	private Long idProduto;
 	private String nome;
 	private Double preco;
+	private String marca;
 
 	public Long getIdProduto() {
 		return idProduto;
@@ -28,5 +29,13 @@ public class Produto {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 }
