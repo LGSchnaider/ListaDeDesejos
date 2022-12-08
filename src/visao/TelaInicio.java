@@ -118,13 +118,13 @@ public class TelaInicio extends JFrame {
 		center.add(panel_4);
 		panel_4.setLayout(new BorderLayout(0, 0));
 
-		JButton btnNewButton_4 = new JButton("Cadastrar Vendedor");
-		btnNewButton_4.addActionListener(new ActionListener() {
+		JButton btnPedido = new JButton("");
+		btnPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 			}
 		});
-		panel_4.add(btnNewButton_4);
+		panel_4.add(btnPedido);
 
 		JPanel panel_22 = new JPanel();
 		panel_4.add(panel_22, BorderLayout.WEST);
