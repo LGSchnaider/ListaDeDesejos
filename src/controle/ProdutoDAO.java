@@ -23,15 +23,15 @@ public class ProdutoDAO {
 			
 			Produto p1 = new Produto();
 			p1.setNome("Bola");
-			p1.setPreco(30.00);
+			p1.setValor(30.00);
 			
 			Produto p2 = new Produto();
 			p1.setNome("Carrinho de controle remoto");
-			p1.setPreco(120.00);
+			p1.setValor(120.00);
 			
 			Produto p3 = new Produto();
 			p1.setNome("Kinder ovo");
-			p1.setPreco(8.00);
+			p1.setValor(8.00);
 			
 			produtos.add(p1);
 			produtos.add(p2);
