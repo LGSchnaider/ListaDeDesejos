@@ -126,7 +126,15 @@ public class TelaCadastroUsuario extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				String nome = txtNome.getText();
-				long CPF = Long.valueOf(txtCPF.getText());
+				long cpf;
+				try
+				{
+					cpf = Long.valueOf(txtCPF.getText());
+				
+				} catch (NumberFormatException x) {
+					JOptionPane.showMessageDialog(null, "CPF invalido");
+					return;
+				}
 				String login = txtLogin.getText();
 				String senha = txtSenha.getText();
 				
@@ -139,7 +147,7 @@ public class TelaCadastroUsuario extends JFrame {
 				// completar
 				Usuario usuario = new Usuario();
 				usuario.setNome(nome);
-				usuario.setCpf(CPF);
+				usuario.setCpf(cpf);
 				
 				usuario.setLogin(login);
 				usuario.setSenha(senha);
