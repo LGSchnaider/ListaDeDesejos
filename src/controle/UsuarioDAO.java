@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import modelo.IUsuarioDAO;
 import modelo.Pedido;
-import modelo.Pedido;
 
 public class UsuarioDAO implements IUsuarioDAO {
 
@@ -26,7 +25,6 @@ public class UsuarioDAO implements IUsuarioDAO {
 
 	@Override
 	public boolean inserir(Pedido p) {
-
 		if (p != null) {
 			pedidos.add(p);
 			return true;
@@ -38,7 +36,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 	public boolean alterar(Pedido p, Long id) {
 		for (Pedido pedido : pedidos) {
 			if (pedido.getId() == id) {
-//				desejo.set
+//				pedido.setProdutos(null);
 				return true;
 			}
 		}
@@ -58,7 +56,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 
 	@Override
-	public ArrayList<Pedido> listarDesejos() {
+	public ArrayList<Pedido> listarProdutos() {
 		return pedidos;
 	}
 

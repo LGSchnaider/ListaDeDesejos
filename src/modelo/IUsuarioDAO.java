@@ -10,6 +10,6 @@ public interface IUsuarioDAO {
 
 	public boolean deletar(Pedido p, Long id);
 
-	public ArrayList<Pedido> listarDesejos();
+	public ArrayList<Pedido> listarProdutos();
 
 }
