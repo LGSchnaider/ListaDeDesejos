@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,12 +14,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import modelo.Produto;
 import modelo.Usuario;
 
+import modelo.Produto;
 public class TelaInicio extends JFrame {
 
 	private JPanel contentPane;
 	private Usuario usuarioLogado;
+	private ArrayList<Produto> produtos;
 
 	/**
 	 * Launch the application.
@@ -32,6 +36,8 @@ public class TelaInicio extends JFrame {
 		if (usuario != null) {
 			this.usuarioLogado = usuario;
 		}
+		
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 220);
@@ -118,10 +124,15 @@ public class TelaInicio extends JFrame {
 		center.add(panel_4);
 		panel_4.setLayout(new BorderLayout(0, 0));
 
-		JButton btnPedido = new JButton("");
+		JButton btnPedido = new JButton("Fazer Pedido");
 		btnPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				dispose();
+				// CHAMA A CLASSE 
+				NovaTelaPedido frame = new NovaTelaPedido(produtos);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				// TERMINA O CHAMADO
 			}
 		});
 		panel_4.add(btnPedido);
@@ -185,4 +196,13 @@ public class TelaInicio extends JFrame {
 		setLocationRelativeTo(null);
 	}
 
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
+	
 }

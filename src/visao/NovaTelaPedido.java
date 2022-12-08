@@ -84,7 +84,7 @@ public class NovaTelaPedido extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnDeletarPdd.setBounds(383, 363, 129, 23);
+		btnDeletarPdd.setBounds(396, 363, 129, 23);
 		contentPane.add(btnDeletarPdd);
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -94,6 +94,7 @@ public class NovaTelaPedido extends JFrame {
 				// CHAMA A CLASSE TELA DE INICIO
 				TelaInicio frame = new TelaInicio(null);
 				frame.setLocationRelativeTo(null);
+				frame.setProdutos(lista);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO
 			}
