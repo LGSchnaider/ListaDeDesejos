@@ -182,6 +182,7 @@ public class TelaInicio extends JFrame {
 
 		JPanel panel_29 = new JPanel();
 		panel.add(panel_29, BorderLayout.EAST);
+		setLocationRelativeTo(null);
 	}
 
 }

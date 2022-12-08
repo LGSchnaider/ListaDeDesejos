@@ -125,8 +125,8 @@ public class TelaCadastroUsuario extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-//				String nome = txtNome.getText();
-//				long CPF = Long.valueOf(txtCPF.getText());
+				String nome = txtNome.getText();
+				long CPF = Long.valueOf(txtCPF.getText());
 				String login = txtLogin.getText();
 				String senha = txtSenha.getText();
 				
@@ -138,8 +138,8 @@ public class TelaCadastroUsuario extends JFrame {
 				
 				// completar
 				Usuario usuario = new Usuario();
-//				usuario.setNome(nome);
-//				usuario.setCpf(CPF);
+				usuario.setNome(nome);
+				usuario.setCpf(CPF);
 				
 				usuario.setLogin(login);
 				usuario.setSenha(senha);
