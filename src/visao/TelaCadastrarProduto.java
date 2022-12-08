@@ -17,7 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import modelo.Produto;
 
-public class TelaProduto extends JFrame {
+public class TelaCadastrarProduto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
@@ -31,9 +31,9 @@ public class TelaProduto extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaProduto() {
+	public TelaCadastrarProduto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 350, 250);
+		setBounds(100, 100, 435, 340);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

@@ -99,7 +99,7 @@ public class TelaInicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE CADASTRAR PRODUTO
-				TelaProduto frame = new TelaProduto();
+				TelaCadastrarProduto frame = new TelaCadastrarProduto();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO
