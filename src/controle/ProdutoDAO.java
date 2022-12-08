@@ -9,6 +9,9 @@ public class ProdutoDAO {
 	private static ArrayList<Produto> produtos;
 	private static ProdutoDAO instancia;
 
+	/**
+	 * Padrao singleton
+	 */
 	private ProdutoDAO() {
 	}
 

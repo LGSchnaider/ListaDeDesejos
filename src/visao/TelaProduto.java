@@ -62,7 +62,7 @@ public class TelaProduto extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE TELA DE INICIO
-				TelaInicio frame = new TelaInicio();
+				TelaInicio frame = new TelaInicio(null);
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO

@@ -2,17 +2,17 @@ package modelo;
 
 public class Produto {
 
-	private Long idProduto;
+	private Long id;
 	private String nome;
 	private Double preco;
 	private String marca;
 
-	public Long getIdProduto() {
-		return idProduto;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdProduto(Long idProduto) {
-		this.idProduto = idProduto;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {

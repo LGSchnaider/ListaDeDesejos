@@ -1,15 +1,9 @@
 package modelo;
 
-import java.util.ArrayList;
-
 public interface IUsuarioDAO {
 
-	public boolean inserir(Pedido p);
+	public boolean inserir(Usuario usuario);
 
-	public boolean alterar(Pedido p, Long id);
-
-	public boolean deletar(Pedido p, Long id);
-
-	public ArrayList<Pedido> listarProdutos();
+	public Usuario efetuarLogin(String nome, String senha);
 
 }

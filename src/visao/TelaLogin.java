@@ -10,15 +10,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controle.UsuarioDAO;
+import modelo.Usuario;
+
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtLogin;
+	private JTextField txtSenha;
 
 	/**
 	 * Create the frame.
@@ -59,9 +63,9 @@ public class TelaLogin extends JFrame {
 		JPanel panel_4 = new JPanel();
 		center.add(panel_4);
 
-		textField = new JTextField();
-		panel_4.add(textField);
-		textField.setColumns(10);
+		txtLogin = new JTextField();
+		panel_4.add(txtLogin);
+		txtLogin.setColumns(10);
 
 		JPanel panel_5 = new JPanel();
 		center.add(panel_5);
@@ -72,9 +76,9 @@ public class TelaLogin extends JFrame {
 		JPanel panel_6 = new JPanel();
 		center.add(panel_6);
 
-		textField_1 = new JTextField();
-		panel_6.add(textField_1);
-		textField_1.setColumns(10);
+		txtSenha = new JTextField();
+		panel_6.add(txtSenha);
+		txtSenha.setColumns(10);
 
 		JPanel panel_8 = new JPanel();
 		center.add(panel_8);
@@ -88,12 +92,19 @@ public class TelaLogin extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
-				//CHAMA A CLASSE INICIO
-				TelaInicio frame = new TelaInicio();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				//TERMINA O CHAMADO
+				
+				String login = txtLogin.getText();
+				String senha = txtSenha.getText();
+				
+				UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
+				Usuario usuarioLogado = bdUsuario.efetuarLogin(null, null);
+				if(usuarioLogado != null) {
+					TelaInicio telaInicio = new TelaInicio(usuarioLogado);
+					telaInicio.setVisible(true);
+				} else {
+					JOptionPane.showMessageDialog(null, "Login invalido");
+				}
+				
 			}
 		});
 		south.add(btnLogin);
