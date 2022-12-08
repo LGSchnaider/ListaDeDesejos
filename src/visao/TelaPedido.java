@@ -27,7 +27,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class JFrameControl extends JFrame {
+public class TelaPedido extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
@@ -44,7 +44,7 @@ public class JFrameControl extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JFrameControl frame = new JFrameControl();
+					TelaPedido frame = new TelaPedido();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,7 +56,7 @@ public class JFrameControl extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JFrameControl() {
+	public TelaPedido() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 500);
 		contentPane = new JPanel();

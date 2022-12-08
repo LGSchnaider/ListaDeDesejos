@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class Start extends JFrame {
+public class TelaStart extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +26,7 @@ public class Start extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Start frame = new Start();
+					TelaStart frame = new TelaStart();
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -39,7 +39,7 @@ public class Start extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Start() {
+	public TelaStart() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 250);
 		contentPane = new JPanel();
@@ -69,7 +69,7 @@ public class Start extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE CADASTRAR
-				Cadastrar frame = new Cadastrar();
+				TelaCadastroUsuario frame = new TelaCadastroUsuario();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 
@@ -99,7 +99,7 @@ public class Start extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE LOGIN
-				Login frame = new Login();
+				TelaLogin frame = new TelaLogin();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO

@@ -14,20 +14,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class Cadastrar extends JFrame {
+public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
 
 	/**
-	 * Launch the application.
-	 */
-
-	/**
 	 * Create the frame.
 	 */
-	public Cadastrar() {
+	public TelaLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 300, 250);
 		contentPane = new JPanel();
@@ -36,74 +32,85 @@ public class Cadastrar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 
-		JPanel Norte = new JPanel();
-		Norte.setBackground(new Color(255, 0, 0));
-		contentPane.add(Norte, BorderLayout.NORTH);
+		JPanel north = new JPanel();
+		north.setBackground(new Color(128, 0, 255));
+		contentPane.add(north, BorderLayout.NORTH);
 
-		JLabel lblNewLabel = new JLabel("Cadastrar");
+		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setFont(new Font("Sitka Subheading", Font.BOLD, 22));
-		Norte.add(lblNewLabel);
+		north.add(lblNewLabel);
 
-		JPanel Centro = new JPanel();
-		contentPane.add(Centro, BorderLayout.CENTER);
-		Centro.setLayout(new GridLayout(4, 2, 0, 0));
-
-		JPanel panel_1 = new JPanel();
-		Centro.add(panel_1);
-
-		JPanel panel_2 = new JPanel();
-		Centro.add(panel_2);
-
-		JPanel panel_3 = new JPanel();
-		Centro.add(panel_3);
-
-		JLabel lblNewLabel_1 = new JLabel("Login:");
-		panel_3.add(lblNewLabel_1);
+		JPanel center = new JPanel();
+		contentPane.add(center, BorderLayout.CENTER);
+		center.setLayout(new GridLayout(4, 3, 0, 0));
 
 		JPanel panel = new JPanel();
-		Centro.add(panel);
+		center.add(panel);
 
-		textField = new JTextField();
-		panel.add(textField);
-		textField.setColumns(10);
+		JPanel panel_1 = new JPanel();
+		center.add(panel_1);
+
+		JPanel panel_2 = new JPanel();
+		center.add(panel_2);
+
+		JLabel lblNewLabel_1 = new JLabel("Login:");
+		panel_2.add(lblNewLabel_1);
 
 		JPanel panel_4 = new JPanel();
-		Centro.add(panel_4);
+		center.add(panel_4);
 
-		JLabel lblNewLabel_2 = new JLabel("Senha:");
-		panel_4.add(lblNewLabel_2);
+		textField = new JTextField();
+		panel_4.add(textField);
+		textField.setColumns(10);
 
 		JPanel panel_5 = new JPanel();
-		Centro.add(panel_5);
+		center.add(panel_5);
 
-		textField_1 = new JTextField();
-		panel_5.add(textField_1);
-		textField_1.setColumns(10);
+		JLabel lblNewLabel_2 = new JLabel("Senha:");
+		panel_5.add(lblNewLabel_2);
 
 		JPanel panel_6 = new JPanel();
-		Centro.add(panel_6);
+		center.add(panel_6);
 
-		JPanel panel_7 = new JPanel();
-		Centro.add(panel_7);
+		textField_1 = new JTextField();
+		panel_6.add(textField_1);
+		textField_1.setColumns(10);
 
-		JPanel Sul = new JPanel();
-		contentPane.add(Sul, BorderLayout.SOUTH);
+		JPanel panel_8 = new JPanel();
+		center.add(panel_8);
 
-		JButton btnNewButton_1 = new JButton("Cadastrar");
-		Sul.add(btnNewButton_1);
+		JPanel panel_9 = new JPanel();
+		center.add(panel_9);
+
+		JPanel south = new JPanel();
+		contentPane.add(south, BorderLayout.SOUTH);
+
+		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				//CHAMA A CLASSE INICIO
+				TelaInicio frame = new TelaInicio();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+				//TERMINA O CHAMADO
+			}
+		});
+		south.add(btnLogin);
 
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				//CHAMA A CLASSE START
-				Start frame = new Start();
+				TelaStart frame = new TelaStart();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				//TERMINA O CHAMADO
 			}
 		});
-		Sul.add(btnVoltar);
+		south.add(btnVoltar);
+		
+		//if (!)
 	}
-
 }

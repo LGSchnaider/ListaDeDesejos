@@ -16,7 +16,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Inicio extends JFrame {
+public class TelaInicio extends JFrame {
 
 	private JPanel contentPane;
 
@@ -27,7 +27,7 @@ public class Inicio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Inicio() {
+	public TelaInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 220);
 		contentPane = new JPanel();
@@ -52,19 +52,6 @@ public class Inicio extends JFrame {
 		center.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 
-		JButton btnListaDesejo = new JButton("Lista de Desejos");
-		btnListaDesejo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				// CHAMA A CLASSE LISTA DE DESEJOS
-				ListaDeDesejos frame = new ListaDeDesejos();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				// TERMINA O CHAMADO
-			}
-		});
-		panel_1.add(btnListaDesejo);
-
 		JPanel panel_10 = new JPanel();
 		panel_1.add(panel_10, BorderLayout.NORTH);
 
@@ -80,20 +67,6 @@ public class Inicio extends JFrame {
 		JPanel panel_2 = new JPanel();
 		center.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
-
-		JButton btnHistorico = new JButton("Histórico");
-		btnHistorico.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				// CHAMA A CLASSE HISTORICO
-				TelaHistorico frame = new TelaHistorico();
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				// TERMINA O CHAMADO
-			}
-		});
-
-		panel_2.add(btnHistorico);
 
 		JPanel panel_6 = new JPanel();
 		panel_2.add(panel_6, BorderLayout.NORTH);
@@ -143,6 +116,7 @@ public class Inicio extends JFrame {
 		JButton btnNewButton_4 = new JButton("Cadastrar Vendedor");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 
 			}
 		});
@@ -163,14 +137,6 @@ public class Inicio extends JFrame {
 		JPanel panel_5 = new JPanel();
 		center.add(panel_5);
 		panel_5.setLayout(new BorderLayout(0, 0));
-
-		JButton btnListaVendedores = new JButton("Lista de Vendedores");
-		btnListaVendedores.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		panel_5.add(btnListaVendedores);
 
 		JPanel panel_18 = new JPanel();
 		panel_5.add(panel_18, BorderLayout.NORTH);
@@ -193,7 +159,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE START
-				Start frame = new Start();
+				TelaStart frame = new TelaStart();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO
