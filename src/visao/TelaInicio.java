@@ -18,6 +18,7 @@ import modelo.Produto;
 import modelo.Usuario;
 
 import modelo.Produto;
+
 public class TelaInicio extends JFrame {
 
 	private JPanel contentPane;
@@ -36,9 +37,7 @@ public class TelaInicio extends JFrame {
 		if (usuario != null) {
 			this.usuarioLogado = usuario;
 		}
-		
-		
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 380, 220);
 		contentPane = new JPanel();
@@ -128,8 +127,8 @@ public class TelaInicio extends JFrame {
 		btnPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				// CHAMA A CLASSE 
-				NovaTelaPedido frame = new NovaTelaPedido(produtos);
+				// CHAMA A CLASSE
+				NovaTelaPedido frame = new NovaTelaPedido();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 				// TERMINA O CHAMADO
@@ -196,13 +195,4 @@ public class TelaInicio extends JFrame {
 		setLocationRelativeTo(null);
 	}
 
-	public ArrayList<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(ArrayList<Produto> produtos) {
-		this.produtos = produtos;
-	}
-
-	
 }

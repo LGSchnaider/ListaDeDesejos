@@ -56,4 +56,9 @@ public class Produto {
 	public void setEstabelecimento(String estabelecimento) {
 		this.estabelecimento = estabelecimento;
 	}
+	
+	@Override
+	public String toString() {
+		return this.nome;
+	}
 }
