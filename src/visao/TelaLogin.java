@@ -97,8 +97,9 @@ public class TelaLogin extends JFrame {
 				String senha = txtSenha.getText();
 				
 				UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
-				Usuario usuarioLogado = bdUsuario.efetuarLogin(null, null);
+				Usuario usuarioLogado = bdUsuario.efetuarLogin(login, senha);
 				if(usuarioLogado != null) {
+					dispose();
 					TelaInicio telaInicio = new TelaInicio(usuarioLogado);
 					telaInicio.setVisible(true);
 				} else {
