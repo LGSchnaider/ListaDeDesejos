@@ -139,17 +139,27 @@ public class TelaCadastrarProduto extends JFrame {
 		JButton btnInserir = new JButton("Inserir");
 		btnInserir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// 1o - Pega as coisas dos campos de texto
+				String nomeProduto = txtNome.getText();
+				String precoProduto = txtValor.getText();
+
+				// 2o - Conversao de tipo
+				Double preco = Double.valueOf(precoProduto);
+
+				// 3o - Criar o objeto e seta os valores
 				Produto produto = new Produto();
-				produto.setNome(txtNome.getText());
-				Double preco;
-				preco =  Double.valueOf(txtValor.getText());
+				produto.setNome(nomeProduto);
 				produto.setValor(preco);
-				produto.setCategoria(cbCategoria.getActionCommand());
-				txtNome.setText("");
-				txtValor.setText("");
+				produto.setCategoria(String.valueOf(cbCategoria.getSelectedItem()));
+
+				// 4o - Adiciona o objeto no arraylist do DAO
 				ProdutoDAO bdProduto = ProdutoDAO.getInstancia();
-				bdProduto.inserir(produto);
+				boolean validar = bdProduto.inserir(produto);
+				if (validar == true) {
 				JOptionPane.showMessageDialog(btnInserir, "Produto cadastrado com sucesso");
+				} else {
+				JOptionPane.showMessageDialog(btnInserir, "Erro ao cadastrar o produto");
+				}
 				return;
 			}
 		});

@@ -49,4 +49,10 @@ public class ProdutoDAO implements IProdutoDAO {
 		return produtos;
 	}
 
+	@Override
+	public boolean inserir(Produto p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
