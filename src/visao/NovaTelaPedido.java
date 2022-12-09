@@ -23,6 +23,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.ProdutoDAO;
+import modelo.Pedido;
 import modelo.Produto;
 
 public class NovaTelaPedido extends JFrame {
@@ -67,6 +68,12 @@ public class NovaTelaPedido extends JFrame {
 		contentPane.add(lblTitulo);
 
 		JButton btnConcluirPdd = new JButton("Finalizar Pedido");
+		btnConcluirPdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pedido pedido = new Pedido();
+				
+			}
+		});
 		btnConcluirPdd.setBounds(22, 363, 169, 23);
 		contentPane.add(btnConcluirPdd);
 
@@ -168,12 +175,12 @@ public class NovaTelaPedido extends JFrame {
 		scrollPane.add(list);
 
 		DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome", "Marca", "Categoria", "Estabelecimento", "Valor", "Data" });
+				new String[] { "Nome", "Categoria", "Valor", "Data" });
 
 		for (int i = 0; i < produtos.size(); i++) {
 			Produto p = produtos.get(i);
 			modelo.addRow(
-					new Object[] { p.getNome(), p.getMarca(), p.getCategoria(), p.getEstabelecimento(), p.getValor() });
+					new Object[] { p.getNome(), p.getCategoria(), p.getValor() });
 		}
 
 		tablePedidos.setModel(modelo);

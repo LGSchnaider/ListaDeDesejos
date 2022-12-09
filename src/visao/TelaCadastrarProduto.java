@@ -11,18 +11,23 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controle.ProdutoDAO;
 import modelo.Produto;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
 
 public class TelaCadastrarProduto extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtValor;
-	private JTextField txtMarca;
 
 	/**
 	 * Launch the application.
@@ -32,6 +37,7 @@ public class TelaCadastrarProduto extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastrarProduto() {
+		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 435, 340);
 		contentPane = new JPanel();
@@ -51,43 +57,19 @@ public class TelaCadastrarProduto extends JFrame {
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 
-		JButton btnNewButton_1 = new JButton("Editar");
-		panel_1.add(btnNewButton_1);
-
-		JButton btnNewButton_2 = new JButton("Remover");
-		panel_1.add(btnNewButton_2);
-
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				// CHAMA A CLASSE TELA DE INICIO
-				TelaInicio frame = new TelaInicio(null);
-				frame.setLocationRelativeTo(null);
-				frame.setVisible(true);
-				// TERMINA O CHAMADO
-
-			}
-		});
-		panel_1.add(btnVoltar);
-
 		JPanel centro = new JPanel();
 		contentPane.add(centro, BorderLayout.CENTER);
 		centro.setLayout(new GridLayout(3, 2, 0, 0));
 
 		JPanel panel_2 = new JPanel();
 		centro.add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
-
-		JPanel panel_8 = new JPanel();
-		panel_2.add(panel_8);
-
-		JPanel panel_9 = new JPanel();
-		panel_2.add(panel_9);
-		panel_9.setLayout(new BorderLayout(0, 0));
-
-		JLabel lblNewLabel_1 = new JLabel("Nome:");
-		panel_9.add(lblNewLabel_1, BorderLayout.CENTER);
+		panel_2.setLayout(null);
+		
+				JLabel lblNewLabel_1 = new JLabel("Nome:");
+				lblNewLabel_1.setBounds(76, 25, 52, 22);
+				panel_2.add(lblNewLabel_1);
+				lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+				lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JPanel panel_3 = new JPanel();
 		centro.add(panel_3);
@@ -105,17 +87,16 @@ public class TelaCadastrarProduto extends JFrame {
 
 		JPanel panel_4 = new JPanel();
 		centro.add(panel_4);
-		panel_4.setLayout(new GridLayout(0, 2, 0, 0));
-
-		JPanel panel_10 = new JPanel();
-		panel_4.add(panel_10);
-
-		JPanel panel_11 = new JPanel();
-		panel_4.add(panel_11);
-		panel_11.setLayout(new BorderLayout(0, 0));
-
-		JLabel lblNewLabel_2 = new JLabel("Valor:");
-		panel_11.add(lblNewLabel_2, BorderLayout.CENTER);
+		panel_4.setLayout(null);
+		
+				JLabel lblNewLabel_2 = new JLabel("Valor:");
+				lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+				lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+				lblNewLabel_2.setLabelFor(this);
+				lblNewLabel_2.setToolTipText("");
+				lblNewLabel_2.setBounds(43, 8, 118, 57);
+				panel_4.add(lblNewLabel_2);
+				lblNewLabel_2.setForeground(new Color(0, 0, 0));
 
 		JPanel panel_5 = new JPanel();
 		centro.add(panel_5);
@@ -133,41 +114,59 @@ public class TelaCadastrarProduto extends JFrame {
 
 		JPanel panel_6 = new JPanel();
 		centro.add(panel_6);
-		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
-
-		JPanel panel_12 = new JPanel();
-		panel_6.add(panel_12);
-
-		JPanel panel_13 = new JPanel();
-		panel_6.add(panel_13);
-		panel_13.setLayout(new BorderLayout(0, 0));
-
-		JLabel lblNewLabel_3 = new JLabel("Marca:");
-		panel_13.add(lblNewLabel_3, BorderLayout.CENTER);
+		panel_6.setLayout(null);
+		
+				JLabel lblNewLabel_3 = new JLabel("Categoria:");
+				lblNewLabel_3.setBounds(62, 25, 80, 22);
+				panel_6.add(lblNewLabel_3);
+				lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+				lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
 		JPanel panel_7 = new JPanel();
 		centro.add(panel_7);
 		panel_7.setLayout(new BorderLayout(0, 0));
-
-		txtMarca = new JTextField();
-		panel_7.add(txtMarca, BorderLayout.CENTER);
-		txtMarca.setColumns(10);
 
 		JPanel panel_18 = new JPanel();
 		panel_7.add(panel_18, BorderLayout.NORTH);
 
 		JPanel panel_19 = new JPanel();
 		panel_7.add(panel_19, BorderLayout.SOUTH);
+		
+		JComboBox cbCategoria = new JComboBox();
+		cbCategoria.setModel(new DefaultComboBoxModel(new String[] {"Brinquedo", "Eletrônico", "Utilidades ", "Alimento", "Outros"}));
+		panel_7.add(cbCategoria, BorderLayout.CENTER);
 
 		JButton btnInserir = new JButton("Inserir");
 		btnInserir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Produto produto = new Produto();
 				produto.setNome(txtNome.getText());
+				Double preco;
+				preco =  Double.valueOf(txtValor.getText());
+				produto.setValor(preco);
+				produto.setCategoria(cbCategoria.getActionCommand());
 				txtNome.setText("");
+				txtValor.setText("");
+				ProdutoDAO bdProduto = ProdutoDAO.getInstancia();
+				JOptionPane.showMessageDialog(btnInserir, "Produto cadastrado com sucesso");
+				return;
 			}
 		});
 		panel_1.add(btnInserir);
+		
+				JButton btnVoltar = new JButton("Voltar");
+				btnVoltar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+						// CHAMA A CLASSE TELA DE INICIO
+						TelaInicio frame = new TelaInicio(null);
+						frame.setLocationRelativeTo(null);
+						frame.setVisible(true);
+						// TERMINA O CHAMADO
+
+					}
+				});
+				panel_1.add(btnVoltar);
 	}
 
 }

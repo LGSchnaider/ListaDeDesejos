@@ -18,6 +18,8 @@ public class PedidoDAO implements IPedidoDAO {
 		if (instancia == null) {
 			instancia = new PedidoDAO();
 			tabelaPedidos = new ArrayList<>();
+			
+			
 		}
 
 		return instancia;
