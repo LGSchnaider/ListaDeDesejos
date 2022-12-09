@@ -148,6 +148,7 @@ public class TelaCadastrarProduto extends JFrame {
 				txtNome.setText("");
 				txtValor.setText("");
 				ProdutoDAO bdProduto = ProdutoDAO.getInstancia();
+				System.out.println(produto.getNome() + produto.getValor() + produto.getCategoria());
 				JOptionPane.showMessageDialog(btnInserir, "Produto cadastrado com sucesso");
 				return;
 			}

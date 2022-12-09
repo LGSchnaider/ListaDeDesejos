@@ -1,6 +1,7 @@
 package visao;
 
 import java.awt.Color;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -22,7 +24,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import controle.PedidoDAO;
 import controle.ProdutoDAO;
+import modelo.IProdutoDAO;
 import modelo.Pedido;
 import modelo.Produto;
 
@@ -52,6 +56,9 @@ public class NovaTelaPedido extends JFrame {
 	 * Create the frame.
 	 */
 	public NovaTelaPedido() {
+		
+		PedidoDAO bdPedido = PedidoDAO.getInstancia();
+		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 681, 425);
@@ -72,6 +79,7 @@ public class NovaTelaPedido extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Pedido pedido = new Pedido();
 				
+				bdPedido.inserir(pedido);
 			}
 		});
 		btnConcluirPdd.setBounds(22, 363, 169, 23);
@@ -80,6 +88,9 @@ public class NovaTelaPedido extends JFrame {
 		JButton btnEditar = new JButton("Editar Pedido");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Pedido pedido = new Pedido();
+				bdPedido.alterar(pedido);
+				
 			}
 		});
 		btnEditar.setBounds(217, 363, 143, 23);
@@ -89,6 +100,8 @@ public class NovaTelaPedido extends JFrame {
 		btnDeletarPdd.setForeground(new Color(255, 0, 0));
 		btnDeletarPdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Pedido  pedido = new Pedido();
+				bdPedido.excluir(pedido);
 			}
 		});
 		btnDeletarPdd.setBounds(396, 363, 129, 23);
@@ -115,7 +128,6 @@ public class NovaTelaPedido extends JFrame {
 		contentPane.add(lblNome);
 
 		txtNome = new JTextField();
-		txtNome.setText("Digite");
 		txtNome.setBounds(78, 62, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);

@@ -58,38 +58,6 @@ public class TelaInicio extends JFrame {
 		contentPane.add(center, BorderLayout.CENTER);
 		center.setLayout(new GridLayout(3, 2, 0, 0));
 
-		JPanel panel_1 = new JPanel();
-		center.add(panel_1);
-		panel_1.setLayout(new BorderLayout(0, 0));
-
-		JPanel panel_10 = new JPanel();
-		panel_1.add(panel_10, BorderLayout.NORTH);
-
-		JPanel panel_11 = new JPanel();
-		panel_1.add(panel_11, BorderLayout.WEST);
-
-		JPanel panel_12 = new JPanel();
-		panel_1.add(panel_12, BorderLayout.EAST);
-
-		JPanel panel_13 = new JPanel();
-		panel_1.add(panel_13, BorderLayout.SOUTH);
-
-		JPanel panel_2 = new JPanel();
-		center.add(panel_2);
-		panel_2.setLayout(new BorderLayout(0, 0));
-
-		JPanel panel_6 = new JPanel();
-		panel_2.add(panel_6, BorderLayout.NORTH);
-
-		JPanel panel_7 = new JPanel();
-		panel_2.add(panel_7, BorderLayout.WEST);
-
-		JPanel panel_8 = new JPanel();
-		panel_2.add(panel_8, BorderLayout.SOUTH);
-
-		JPanel panel_9 = new JPanel();
-		panel_2.add(panel_9, BorderLayout.EAST);
-
 		JPanel panel_3 = new JPanel();
 		center.add(panel_3);
 		panel_3.setLayout(new BorderLayout(0, 0));
@@ -147,22 +115,6 @@ public class TelaInicio extends JFrame {
 
 		JPanel panel_25 = new JPanel();
 		panel_4.add(panel_25, BorderLayout.SOUTH);
-
-		JPanel panel_5 = new JPanel();
-		center.add(panel_5);
-		panel_5.setLayout(new BorderLayout(0, 0));
-
-		JPanel panel_18 = new JPanel();
-		panel_5.add(panel_18, BorderLayout.NORTH);
-
-		JPanel panel_19 = new JPanel();
-		panel_5.add(panel_19, BorderLayout.WEST);
-
-		JPanel panel_20 = new JPanel();
-		panel_5.add(panel_20, BorderLayout.SOUTH);
-
-		JPanel panel_21 = new JPanel();
-		panel_5.add(panel_21, BorderLayout.EAST);
 
 		JPanel panel = new JPanel();
 		center.add(panel);
