@@ -49,10 +49,11 @@ public class TelaStart extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 0, 0));
+		panel.setBackground(new Color(81, 81, 81));
 		contentPane.add(panel, BorderLayout.NORTH);
 
 		JLabel lblNewLabel = new JLabel("Lista de Desejos");
+		lblNewLabel.setForeground(new Color(0, 255, 0));
 		lblNewLabel.setFont(new Font("Sitka Subheading", Font.BOLD, 22));
 		panel.add(lblNewLabel);
 
@@ -61,11 +62,13 @@ public class TelaStart extends JFrame {
 		panel_1.setLayout(new GridLayout(3, 1, 0, 0));
 
 		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(81, 81, 81));
 		panel_1.add(panel_3);
 		panel_3.setLayout(new BorderLayout(0, 0));
 
-		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE CADASTRAR
@@ -76,26 +79,31 @@ public class TelaStart extends JFrame {
 				// TERMINA O CHAMADO
 			}
 		});
-		panel_3.add(btnNewButton);
+		panel_3.add(btnCadastrar);
 
 		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(new Color(81, 81, 81));
 		panel_3.add(panel_5, BorderLayout.NORTH);
 
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(81, 81, 81));
 		panel_3.add(panel_6, BorderLayout.WEST);
 
 		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(new Color(81, 81, 81));
 		panel_3.add(panel_7, BorderLayout.SOUTH);
 
 		JPanel panel_8 = new JPanel();
+		panel_8.setBackground(new Color(81, 81, 81));
 		panel_3.add(panel_8, BorderLayout.EAST);
 
 		JPanel panel_4 = new JPanel();
 		panel_1.add(panel_4);
 		panel_4.setLayout(new BorderLayout(0, 0));
 
-		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				// CHAMA A CLASSE LOGIN
@@ -106,18 +114,22 @@ public class TelaStart extends JFrame {
 
 			}
 		});
-		panel_4.add(btnNewButton_1);
+		panel_4.add(btnLogin);
 
 		JPanel panel_9 = new JPanel();
+		panel_9.setBackground(new Color(81, 81, 81));
 		panel_4.add(panel_9, BorderLayout.NORTH);
 
 		JPanel panel_10 = new JPanel();
+		panel_10.setBackground(new Color(81, 81, 81));
 		panel_4.add(panel_10, BorderLayout.WEST);
 
 		JPanel panel_11 = new JPanel();
+		panel_11.setBackground(new Color(81, 81, 81));
 		panel_4.add(panel_11, BorderLayout.SOUTH);
 
 		JPanel panel_12 = new JPanel();
+		panel_12.setBackground(new Color(81, 81, 81));
 		panel_4.add(panel_12, BorderLayout.EAST);
 
 		JPanel panel_2 = new JPanel();
@@ -125,6 +137,7 @@ public class TelaStart extends JFrame {
 		panel_2.setLayout(new BorderLayout(0, 0));
 
 		JButton btnSair = new JButton("Sair");
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -133,15 +146,20 @@ public class TelaStart extends JFrame {
 		panel_2.add(btnSair);
 
 		JPanel panel_13 = new JPanel();
+		panel_13.setBackground(new Color(81, 81, 81));
 		panel_2.add(panel_13, BorderLayout.NORTH);
 
 		JPanel panel_14 = new JPanel();
+		panel_14.setBackground(new Color(81, 81, 81));
 		panel_2.add(panel_14, BorderLayout.WEST);
 
 		JPanel panel_15 = new JPanel();
+		panel_15.setForeground(new Color(0, 0, 0));
+		panel_15.setBackground(new Color(81, 81, 81));
 		panel_2.add(panel_15, BorderLayout.SOUTH);
 
 		JPanel panel_16 = new JPanel();
+		panel_16.setBackground(new Color(81, 81, 81));
 		panel_2.add(panel_16, BorderLayout.EAST);
 	}
 

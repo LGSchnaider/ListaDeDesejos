@@ -43,7 +43,7 @@ public class TelaCadastroUsuario extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 
 		JPanel Norte = new JPanel();
-		Norte.setBackground(new Color(128, 128, 128));
+		Norte.setBackground(new Color(81, 81, 81));
 		contentPane.add(Norte, BorderLayout.NORTH);
 
 		JLabel lblNewLabel = new JLabel("Cadastrar");
@@ -56,72 +56,87 @@ public class TelaCadastroUsuario extends JFrame {
 		Centro.setLayout(new GridLayout(4, 2, 0, 0));
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(128, 128, 128));
+		panel_1.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Nome:");
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_3.setForeground(new Color(0, 255, 0));
 		panel_1.add(lblNewLabel_3);
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(128, 128, 128));
+		panel_2.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_2);
 		
 		txtNome = new JTextField();
+		txtNome.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		txtNome.setBackground(new Color(192, 192, 192));
 		panel_2.add(txtNome);
 		txtNome.setColumns(10);
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(128, 128, 128));
+		panel_3.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("CPF:");
+		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_4.setForeground(new Color(0, 255, 0));
 		panel_3.add(lblNewLabel_4);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 128, 128));
+		panel.setBackground(new Color(81, 81, 81));
 		Centro.add(panel);
 		
 		txtCPF = new JTextField();
+		txtCPF.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		txtCPF.setBackground(new Color(192, 192, 192));
 		panel.add(txtCPF);
 		txtCPF.setColumns(10);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(128, 128, 128));
+		panel_4.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_4);
 		
 				JLabel lblNewLabel_1 = new JLabel("Login:");
+				lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
+				lblNewLabel_1.setForeground(new Color(0, 255, 0));
 				panel_4.add(lblNewLabel_1);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(128, 128, 128));
+		panel_5.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_5);
 		
 				txtLogin = new JTextField();
+				txtLogin.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 				panel_5.add(txtLogin);
-				txtLogin.setBackground(new Color(216, 216, 216));
+				txtLogin.setBackground(new Color(192, 192, 192));
 				txtLogin.setColumns(10);
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(new Color(128, 128, 128));
+		panel_6.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_6);
 		
 				JLabel lblNewLabel_2 = new JLabel("Senha:");
+				lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 12));
+				lblNewLabel_2.setForeground(new Color(0, 255, 0));
 				panel_6.add(lblNewLabel_2);
 
 		JPanel panel_7 = new JPanel();
-		panel_7.setBackground(new Color(128, 128, 128));
+		panel_7.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_7);
 		
 				txtSenha = new JTextField();
+				txtSenha.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 				panel_7.add(txtSenha);
-				txtSenha.setBackground(new Color(216, 216, 216));
+				txtSenha.setBackground(new Color(192, 192, 192));
 				txtSenha.setColumns(10);
 
 		JPanel Sul = new JPanel();
-		Sul.setBackground(new Color(128, 128, 128));
+		Sul.setBackground(new Color(81, 81, 81));
 		contentPane.add(Sul, BorderLayout.SOUTH);
 
 		JButton btnNewButton_1 = new JButton("Cadastrar");
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -164,6 +179,7 @@ public class TelaCadastroUsuario extends JFrame {
 		Sul.add(btnNewButton_1);
 
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
