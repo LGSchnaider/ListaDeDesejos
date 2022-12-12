@@ -1,4 +1,4 @@
- package visao;
+package visao;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -58,7 +58,7 @@ public class TelaCadastroUsuario extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_1);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Nome:");
 		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		lblNewLabel_3.setForeground(new Color(0, 255, 0));
@@ -67,7 +67,7 @@ public class TelaCadastroUsuario extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_2);
-		
+
 		txtNome = new JTextField();
 		txtNome.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		txtNome.setBackground(new Color(192, 192, 192));
@@ -77,7 +77,7 @@ public class TelaCadastroUsuario extends JFrame {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_3);
-		
+
 		JLabel lblNewLabel_4 = new JLabel("CPF:");
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		lblNewLabel_4.setForeground(new Color(0, 255, 0));
@@ -86,7 +86,7 @@ public class TelaCadastroUsuario extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(81, 81, 81));
 		Centro.add(panel);
-		
+
 		txtCPF = new JTextField();
 		txtCPF.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		txtCPF.setBackground(new Color(192, 192, 192));
@@ -96,40 +96,40 @@ public class TelaCadastroUsuario extends JFrame {
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_4);
-		
-				JLabel lblNewLabel_1 = new JLabel("Login:");
-				lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
-				lblNewLabel_1.setForeground(new Color(0, 255, 0));
-				panel_4.add(lblNewLabel_1);
+
+		JLabel lblNewLabel_1 = new JLabel("Login:");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_1.setForeground(new Color(0, 255, 0));
+		panel_4.add(lblNewLabel_1);
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_5);
-		
-				txtLogin = new JTextField();
-				txtLogin.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-				panel_5.add(txtLogin);
-				txtLogin.setBackground(new Color(192, 192, 192));
-				txtLogin.setColumns(10);
+
+		txtLogin = new JTextField();
+		txtLogin.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		panel_5.add(txtLogin);
+		txtLogin.setBackground(new Color(192, 192, 192));
+		txtLogin.setColumns(10);
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_6);
-		
-				JLabel lblNewLabel_2 = new JLabel("Senha:");
-				lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 12));
-				lblNewLabel_2.setForeground(new Color(0, 255, 0));
-				panel_6.add(lblNewLabel_2);
+
+		JLabel lblNewLabel_2 = new JLabel("Senha:");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_2.setForeground(new Color(0, 255, 0));
+		panel_6.add(lblNewLabel_2);
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(new Color(81, 81, 81));
 		Centro.add(panel_7);
-		
-				txtSenha = new JTextField();
-				txtSenha.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-				panel_7.add(txtSenha);
-				txtSenha.setBackground(new Color(192, 192, 192));
-				txtSenha.setColumns(10);
+
+		txtSenha = new JTextField();
+		txtSenha.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		panel_7.add(txtSenha);
+		txtSenha.setBackground(new Color(192, 192, 192));
+		txtSenha.setColumns(10);
 
 		JPanel Sul = new JPanel();
 		Sul.setBackground(new Color(81, 81, 81));
@@ -142,28 +142,27 @@ public class TelaCadastroUsuario extends JFrame {
 
 				String nome = txtNome.getText();
 				long cpf;
-				try
-				{
+				try {
 					cpf = Long.valueOf(txtCPF.getText());
-				
+
 				} catch (NumberFormatException x) {
 					JOptionPane.showMessageDialog(null, "CPF invalido");
 					return;
 				}
 				String login = txtLogin.getText();
 				String senha = txtSenha.getText();
-				
-				if(login.isEmpty() || senha.isEmpty()) {
+
+				if (login.isEmpty() || senha.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Favor inserir senha e login");
 					return;
 				}
 				UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
-				
+
 				// completar
 				Usuario usuario = new Usuario();
 				usuario.setNome(nome);
 				usuario.setCpf(cpf);
-				
+
 				usuario.setLogin(login);
 				usuario.setSenha(senha);
 

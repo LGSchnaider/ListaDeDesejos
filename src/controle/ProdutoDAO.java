@@ -3,6 +3,7 @@ package controle;
 import java.util.ArrayList;
 
 import modelo.IProdutoDAO;
+import modelo.Pessoa;
 import modelo.Produto;
 
 public class ProdutoDAO implements IProdutoDAO {
@@ -51,8 +52,16 @@ public class ProdutoDAO implements IProdutoDAO {
 
 	@Override
 	public boolean inserir(Produto p) {
-		// TODO Auto-generated method stub
+		if (p != null) {
+			produtos.add(p);
+			return true;
+		}
 		return false;
+	}
+	
+	
+	public void deletar(int p) {
+		produtos.remove(p);
 	}
 
 }

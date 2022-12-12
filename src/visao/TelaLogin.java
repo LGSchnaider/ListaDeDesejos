@@ -111,20 +111,20 @@ public class TelaLogin extends JFrame {
 		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				String login = txtLogin.getText();
 				String senha = txtSenha.getText();
-				
+
 				UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
 				Usuario usuarioLogado = bdUsuario.efetuarLogin(login, senha);
-				if(usuarioLogado != null) {
+				if (usuarioLogado != null) {
 					dispose();
 					TelaInicio telaInicio = new TelaInicio(usuarioLogado);
 					telaInicio.setVisible(true);
 				} else {
 					JOptionPane.showMessageDialog(null, "Login invalido");
 				}
-				
+
 			}
 		});
 		south.add(btnLogin);
@@ -134,15 +134,15 @@ public class TelaLogin extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				//CHAMA A CLASSE START
+				// CHAMA A CLASSE START
 				TelaStart frame = new TelaStart();
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
-				//TERMINA O CHAMADO
+				// TERMINA O CHAMADO
 			}
 		});
 		south.add(btnVoltar);
-		
-		//if (!)
+
+		// if (!)
 	}
 }

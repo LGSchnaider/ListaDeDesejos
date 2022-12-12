@@ -2,6 +2,16 @@ package modelo;
 
 public class Produto {
 
+	private int row;
+
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
 	private Long id;
 	private String nome;
 	private Double valor;
@@ -31,7 +41,6 @@ public class Produto {
 		this.valor = string;
 	}
 
-
 	public String getCategoria() {
 		return categoria;
 	}
@@ -40,7 +49,6 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
-	
 	@Override
 	public String toString() {
 		return this.nome;

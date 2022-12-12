@@ -39,26 +39,14 @@ public class NovaTelaPedido extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NovaTelaPedido frame = new NovaTelaPedido();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
 	public NovaTelaPedido() {
-		
+
 		PedidoDAO bdPedido = PedidoDAO.getInstancia();
-		
+
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 681, 425);
@@ -77,9 +65,7 @@ public class NovaTelaPedido extends JFrame {
 		JButton btnConcluirPdd = new JButton("Finalizar Pedido");
 		btnConcluirPdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Pedido pedido = new Pedido();
-				
-				bdPedido.inserir(pedido);
+
 			}
 		});
 		btnConcluirPdd.setBounds(22, 363, 169, 23);
@@ -90,7 +76,7 @@ public class NovaTelaPedido extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Pedido pedido = new Pedido();
 				bdPedido.alterar(pedido);
-				
+
 			}
 		});
 		btnEditar.setBounds(217, 363, 143, 23);
@@ -98,12 +84,7 @@ public class NovaTelaPedido extends JFrame {
 
 		JButton btnDeletarPdd = new JButton("Deletar Pedido");
 		btnDeletarPdd.setForeground(new Color(255, 0, 0));
-		btnDeletarPdd.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Pedido  pedido = new Pedido();
-				bdPedido.excluir(pedido);
-			}
-		});
+
 		btnDeletarPdd.setBounds(396, 363, 129, 23);
 		contentPane.add(btnDeletarPdd);
 
@@ -191,11 +172,24 @@ public class NovaTelaPedido extends JFrame {
 
 		for (int i = 0; i < produtos.size(); i++) {
 			Produto p = produtos.get(i);
-			modelo.addRow(
-					new Object[] { p.getNome(), p.getCategoria(), p.getValor() });
+			modelo.addRow(new Object[] { p.getNome(), p.getCategoria(), p.getValor() });
 		}
 
 		tablePedidos.setModel(modelo);
+
+		btnDeletarPdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pedido pedido = new Pedido();
+				int a = tablePedidos.getSelectedRow();
+				ProdutoDAO produto = ProdutoDAO.getInstancia();
+				produto.deletar(a);
+				dispose();
+				NovaTelaPedido frame = new NovaTelaPedido();
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+
+			}
+		});
 
 	}
 }

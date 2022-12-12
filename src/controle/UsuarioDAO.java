@@ -19,6 +19,13 @@ public class UsuarioDAO implements IUsuarioDAO {
 			instancia = new UsuarioDAO();
 			usuarios = new ArrayList<>();
 		}
+		Usuario u = new Usuario();
+		u.setCpf(123);
+		u.setNome("Luiz");
+		u.setLogin("lg");
+		u.setSenha("123");
+		
+		usuarios.add(u);
 
 		return instancia;
 	}
